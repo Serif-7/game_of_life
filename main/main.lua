@@ -3,8 +3,15 @@
 -- TODO: Fullscreen
 -- TODO: rewind to previous boards
 
-local TICK_TIME = 0.1
+local TICK_TIME = 5
 local acc_time = 0
+
+local paused = false
+
+-- pause/unpause on spacebar
+function love.keypressed(key)
+  if key == 'space' then paused = not paused end
+end
 
 function love.load()
 
@@ -29,6 +36,9 @@ function love.load()
 end
 
 function love.update(dt)
+
+  if paused then return end
+
   acc_time = acc_time + dt
 
   if acc_time >= TICK_TIME then
