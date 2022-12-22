@@ -1,4 +1,3 @@
--- TODO: Spacebar to pause
 -- TODO: Click to toggle a cell
 -- TODO: Fullscreen
 -- TODO: rewind to previous boards
